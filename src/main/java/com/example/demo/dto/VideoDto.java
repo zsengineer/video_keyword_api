@@ -1,31 +1,21 @@
-package com.example.demo.entity;
+package com.example.demo.dto;
 
-
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 
-@Entity
-@Data
 @Getter
 @Setter
-public class Video {
+public class VideoDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Column(name="datastream_id")
     private Long datastream_id;
 
-    @Column(name="rulename", length = 255)
     private String rulename;
 
-    @Column(name="ruleurl", length = 255)
     private String ruleurl;
 
-    @Column(name="videoid", length = 50)
     private String videoid;
 
     private Integer type;
@@ -36,10 +26,8 @@ public class Video {
 
     private Integer locked;
 
-    @Column(name="hbaseindex", length = 50)
     private String hbaseindex;
 
-    @Column(name="playlistid", length = 50)
     private String playlistid;
 
     private Integer recheckhours;
@@ -58,15 +46,11 @@ public class Video {
 
     private Timestamp datecreated;
 
-    @Column(name="channelid", length = 255)
     private String channelid;
 
-    @Column(name="channelname", length = 255)
     private String channelname;
 
     private Integer lastpublishedvideo;
 
     private Integer lastpublishedcomment;
-
-
 }
